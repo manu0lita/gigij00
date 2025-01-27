@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mental Health Fact</h1>
+        <p id="fact"></p>
+        <button onclick="newFact()">Show Another Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Approximately 1 in 5 adults in the U.S. experience mental illness in a given year.",
+            "Mental health issues are often stigmatized, which can prevent individuals from seeking help.",
+            "Mental health is closely linked to physical health; conditions like depression can lead to physical health problems.",
+            "Early diagnosis and treatment of mental health conditions can significantly improve outcomes.",
+            "Mental health encompasses a wide range of conditions, including anxiety disorders and mood disorders.",
+            "Genetics can play a role in mental health, but environmental factors also significantly influence well-being.",
+            "There are various effective treatments for mental health conditions, including psychotherapy and medication.",
+            "Mental health issues can affect workplace productivity, leading to more sick days and lower performance.",
+            "Mental health issues often begin in adolescence or early adulthood, making it crucial to address them early.",
+            "Mental health is a global concern, emphasized by the World Health Organization as part of overall health."
+        ];
+
+        function newFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+
+        // Display a fact when the page loads
+        window.onload = newFact;
+    </script>
+</body>
+</html>
